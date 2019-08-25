@@ -1,5 +1,5 @@
 import { test, runIfMain } from "https://deno.land/std/testing/mod.ts";
-import { assert, assertThrows } from "https://deno.land/std/testing/asserts.ts";
+import { assert } from "https://deno.land/std/testing/asserts.ts";
 import { isValid } from "./mod.ts";
 
 const encoder: TextEncoder = new TextEncoder();
@@ -7,16 +7,37 @@ const encoder: TextEncoder = new TextEncoder();
 test({
   name: "hello fraud",
   fn() {
-    assert(   isValid('419', '{"type":"number"}')   )
+    assert(isValid("419", '{"type":"number"}'));
   }
-})
+});
 
 test({
-  name: "null pointer bug",
+  name: "nulls anywhere evaluate to INVALID - wasm traps on nulls [1]",
   fn() {
-    assertThrows((): void =>  { isValid('null', '{"type":"number"}')}   )
+    assert(!isValid("419", "null"));
   }
-})
+});
+
+test({
+  name: "nulls anywhere evaluate to INVALID - wasm traps on nulls [2]",
+  fn() {
+    assert(!isValid("null", "{}"));
+  }
+});
+
+test({
+  name: "nulls anywhere evaluate to INVALID - wasm traps on nulls [3]",
+  fn() {
+    assert(!isValid('"null"', "{}"));
+  }
+});
+
+test({
+  name: "nulls anywhere evaluate to INVALID - wasm traps on nulls [4]",
+  fn() {
+    assert(!isValid('{"fraud":null}', "{}"));
+  }
+});
 
 test({
   name: "validating json buffers",

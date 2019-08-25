@@ -1,6 +1,7 @@
 import { loadWasm } from "./loadWasm.ts";
 
 const encoder: TextEncoder = new TextEncoder();
+
 const wasm: { [key: string]: any } = loadWasm();
 
 export function isValid(
@@ -19,17 +20,24 @@ export function isValid(
   const instancePtr: number = wasm.__wbindgen_malloc(
     instance.byteLength + schema.byteLength
   );
+
   const schemaPtr: number = instancePtr + instance.byteLength;
+
   const vue: Uint8Array = new Uint8Array(wasm.memory.buffer);
 
   vue.set(instance, instancePtr);
   vue.set(schema, schemaPtr);
 
-  return !!wasm.is_valid(
-    instancePtr,
-    instance.byteLength,
-    schemaPtr,
-    schema.byteLength,
-    validateSchema ? 1 : 0
-  );
+  try {
+    return !!wasm.is_valid(
+      instancePtr,
+      instance.byteLength,
+      schemaPtr,
+      schema.byteLength,
+      validateSchema ? 1 : 0
+    );
+  } catch (_) {
+    // wasm panics on parsed json null values
+    return false;
+  }
 }

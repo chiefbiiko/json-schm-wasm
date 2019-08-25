@@ -1,7 +1,15 @@
 # json-schm-wasm
 
-`WASM_INTERFACE_TYPES=1 wasm-pack build`
+JSON schema validation with `WebAssembly`.
 
-`wasmtime ./pkg/json_schm_wasm.wasm --invoke is_valid_str 'null' '{"type":"number"}' \1`
+⁉️ 🔨 still cooking - any JSON containing `null` will yield INVALID. 
 
-`wasmtime ./pkg/json_schm_wasm.wasm --invoke is_valid_str '{"fraud":419}' '{"type":"object","properties":{"fraud":{"type":"number"}}}' \1`
+`->` Make sure your schemas do not specify `null` values and that you are fine with rejecting JSON containing `null`s.
+
+## Usage
+
+``` ts
+import { isValid } from "https://denopkg.com/chiefbiiko/json-schm-wasm/mod.ts";
+
+isValid("419", '{"type":"number"}') // true
+```
