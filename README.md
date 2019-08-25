@@ -16,3 +16,7 @@ import { isValid } from "https://denopkg.com/chiefbiiko/json-schm-wasm/mod.ts";
 
 isValid("419", '{"type":"number"}') // true
 ```
+
+## License
+
+[MIT](./LICENSE)
