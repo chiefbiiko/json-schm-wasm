@@ -17,27 +17,19 @@ export function isValid(
     schema = encoder.encode(schema) as Uint8Array;
   }
 
-  const instancePtr: number = wasm.__wbindgen_malloc(
-    instance.byteLength + schema.byteLength
-  );
-
-  const schemaPtr: number = instancePtr + instance.byteLength;
+  const instancePtr: number = wasm.__wbindgen_malloc(instance.byteLength);
+  const schemaPtr: number = wasm.__wbindgen_malloc(schema.byteLength);
 
   const vue: Uint8Array = new Uint8Array(wasm.memory.buffer);
 
   vue.set(instance, instancePtr);
   vue.set(schema, schemaPtr);
 
-  try {
-    return !!wasm.is_valid(
-      instancePtr,
-      instance.byteLength,
-      schemaPtr,
-      schema.byteLength,
-      validateSchema ? 1 : 0
-    );
-  } catch (_) {
-    // wasm panics on parsed json null values
-    return false;
-  }
+  return !!wasm.is_valid(
+    instancePtr,
+    instance.byteLength,
+    schemaPtr,
+    schema.byteLength,
+    validateSchema ? 1 : 0
+  );
 }

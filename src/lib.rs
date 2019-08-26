@@ -8,11 +8,11 @@ pub fn is_valid(instance: &[u8], schema: &[u8], validate_schema: i32) -> i32 {
         Ok(inst) => inst,
         _ => return 0,
     };
-    
+
     let schm: Value = match from_slice::<Value>(schema) {
         Ok(schm) => schm,
         _ => return 0,
     };
-    
+
     si_valid(&inst, &schm, Some(&Draft7), validate_schema == 1) as i32
 }

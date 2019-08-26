@@ -12,30 +12,23 @@ test({
 });
 
 test({
-  name: "nulls anywhere evaluate to INVALID - wasm traps on nulls [1]",
+  name: "null as schema is an error",
   fn() {
     assert(!isValid("419", "null"));
   }
 });
 
 test({
-  name: "nulls anywhere evaluate to INVALID - wasm traps on nulls [2]",
+  name: "correctly handles null as instance",
   fn() {
-    assert(!isValid("null", "{}"));
+    assert(isValid("null", "{}"));
   }
 });
 
 test({
-  name: "nulls anywhere evaluate to INVALID - wasm traps on nulls [3]",
+  name: "correctly handles null as instance property",
   fn() {
-    assert(!isValid('"null"', "{}"));
-  }
-});
-
-test({
-  name: "nulls anywhere evaluate to INVALID - wasm traps on nulls [4]",
-  fn() {
-    assert(!isValid('{"fraud":null}', "{}"));
+    assert(isValid('{"fraud":null}', '{"type":"object","properties":{"fraud":{"type":"null"}}}'));
   }
 });
 
