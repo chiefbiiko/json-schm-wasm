@@ -28,7 +28,12 @@ test({
 test({
   name: "correctly handles null as instance property",
   fn() {
-    assert(isValid('{"fraud":null}', '{"type":"object","properties":{"fraud":{"type":"null"}}}'));
+    assert(
+      isValid(
+        '{"fraud":null}',
+        '{"type":"object","properties":{"fraud":{"type":"null"}}}'
+      )
+    );
   }
 });
 
@@ -113,6 +118,25 @@ test({
   name: "gracefully handles invalid json",
   fn() {
     assert(!isValid("//", "{}"));
+  }
+});
+
+test({
+  name: "accepts pojos",
+  fn() {
+    assert(
+      isValid(
+        { fraud: "money" },
+        { type: "object", properties: { fraud: { type: "string" } } }
+      )
+    );
+  }
+});
+
+test({
+  name: "works with things like arrays",
+  fn() {
+    assert(isValid([4, 1, 9], { type: "array", items: { type: "number" } }));
   }
 });
 

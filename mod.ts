@@ -5,16 +5,24 @@ const encoder: TextEncoder = new TextEncoder();
 const wasm: { [key: string]: any } = loadWasm();
 
 export function isValid(
-  instance: string | Uint8Array,
-  schema: string | Uint8Array,
+  instance: any,
+  schema: any,
   validateSchema: boolean = true
 ): boolean {
-  if (typeof instance === "string") {
-    instance = encoder.encode(instance) as Uint8Array;
+  if (instance.constructor.name !== "Uint8Array") {
+    if (typeof instance !== "string") {
+      instance = JSON.stringify(instance);
+    }
+
+    instance = encoder.encode(instance);
   }
 
-  if (typeof schema === "string") {
-    schema = encoder.encode(schema) as Uint8Array;
+  if (schema.constructor.name !== "Uint8Array") {
+    if (typeof schema !== "string") {
+      schema = JSON.stringify(schema);
+    }
+
+    schema = encoder.encode(schema);
   }
 
   const instancePtr: number = wasm.__wbindgen_malloc(instance.byteLength);
