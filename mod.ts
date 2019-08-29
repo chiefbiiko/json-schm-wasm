@@ -9,7 +9,7 @@ export function isValid(
   schema: any,
   validateSchema: boolean = true
 ): boolean {
-  if (instance.constructor.name !== "Uint8Array") {
+  if (!instance || instance.constructor.name !== "Uint8Array") {
     if (typeof instance !== "string") {
       instance = JSON.stringify(instance);
     }
@@ -17,7 +17,7 @@ export function isValid(
     instance = encoder.encode(instance);
   }
 
-  if (schema.constructor.name !== "Uint8Array") {
+  if (!schema || schema.constructor.name !== "Uint8Array") {
     if (typeof schema !== "string") {
       schema = JSON.stringify(schema);
     }

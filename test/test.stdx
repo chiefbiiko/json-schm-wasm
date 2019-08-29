@@ -1,0 +1,2537 @@
+Compile file:///Users/nschwarz/Desktop/code/kiwi/json-schm-wasm/test/test.ts
+running 536 tests
+OK     uniqueItems validation > unique array of integers is valid (91.76ms)
+OK     uniqueItems validation > non-unique array of integers is invalid (91.28ms)
+OK     uniqueItems validation > numbers are unique if mathematically unequal (91.17ms)
+OK     uniqueItems validation > false is not equal to zero (91.11ms)
+OK     uniqueItems validation > true is not equal to one (91.05ms)
+OK     uniqueItems validation > unique array of objects is valid (90.97ms)
+OK     uniqueItems validation > non-unique array of objects is invalid (90.86ms)
+OK     uniqueItems validation > unique array of nested objects is valid (90.78ms)
+OK     uniqueItems validation > non-unique array of nested objects is invalid (90.65ms)
+OK     uniqueItems validation > unique array of arrays is valid (90.52ms)
+OK     uniqueItems validation > non-unique array of arrays is invalid (90.45ms)
+OK     uniqueItems validation > 1 and true are unique (90.39ms)
+OK     uniqueItems validation > 0 and false are unique (90.34ms)
+OK     uniqueItems validation > unique heterogeneous types are valid (90.29ms)
+OK     uniqueItems validation > non-unique heterogeneous types are invalid (90.22ms)
+OK     minItems validation > longer is valid (90.15ms)
+OK     minItems validation > exact length is valid (90.09ms)
+OK     minItems validation > too short is invalid (90.09ms)
+OK     additionalProperties being false does not allow other properties > no additional properties is valid (90.04ms)
+OK     additionalProperties being false does not allow other properties > an additional property is invalid (89.24ms)
+OK     additionalProperties being false does not allow other properties > ignores arrays (88.76ms)
+OK     additionalProperties being false does not allow other properties > ignores other non-objects (88.62ms)
+OK     additionalProperties being false does not allow other properties > patternProperties are not additional properties (88.46ms)
+OK     non-ASCII pattern with additionalProperties > matching the pattern is valid (87.97ms)
+OK     non-ASCII pattern with additionalProperties > not matching the pattern is invalid (87.53ms)
+OK     additionalProperties allows a schema which should validate > no additional properties is valid (87.28ms)
+OK     additionalProperties allows a schema which should validate > an additional valid property is valid (87.19ms)
+OK     additionalProperties allows a schema which should validate > an additional invalid property is invalid (87.11ms)
+OK     additionalProperties can exist by itself > an additional valid property is valid (87.01ms)
+OK     additionalProperties can exist by itself > an additional invalid property is invalid (86.99ms)
+OK     additionalProperties are allowed by default > additional properties are allowed (86.92ms)
+OK     additionalProperties should not look in applicators > properties defined in allOf are not allowed (86.86ms)
+OK     dependencies > neither (86.78ms)
+OK     dependencies > nondependant (86.75ms)
+OK     dependencies > with dependency (86.73ms)
+OK     dependencies > missing dependency (86.70ms)
+OK     dependencies > ignores arrays (86.67ms)
+FAILED dependencies > ignores strings
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+OK     dependencies > ignores other non-objects (85.52ms)
+OK     dependencies with empty array > empty object (85.40ms)
+OK     dependencies with empty array > object with one property (85.33ms)
+OK     multiple dependencies > neither (85.25ms)
+OK     multiple dependencies > nondependants (85.18ms)
+OK     multiple dependencies > with dependencies (85.10ms)
+OK     multiple dependencies > missing dependency (85.01ms)
+OK     multiple dependencies > missing other dependency (84.93ms)
+OK     multiple dependencies > missing both dependencies (85.00ms)
+OK     multiple dependencies subschema > valid (84.92ms)
+OK     multiple dependencies subschema > no dependency (84.76ms)
+OK     multiple dependencies subschema > wrong type (84.56ms)
+OK     multiple dependencies subschema > wrong type other (84.34ms)
+OK     multiple dependencies subschema > wrong type both (84.12ms)
+OK     dependencies with boolean subschemas > object with property having schema true is valid (83.88ms)
+OK     dependencies with boolean subschemas > object with property having schema false is invalid (83.75ms)
+OK     dependencies with boolean subschemas > object with both properties is invalid (83.61ms)
+OK     dependencies with boolean subschemas > empty object is valid (83.42ms)
+OK     empty array of dependencies > object with property is valid (83.30ms)
+OK     empty array of dependencies > empty object is valid (83.19ms)
+OK     empty array of dependencies > non-object is valid (83.09ms)
+OK     dependencies with escaped characters > valid object 1 (82.98ms)
+OK     dependencies with escaped characters > valid object 2 (82.75ms)
+OK     dependencies with escaped characters > valid object 3 (82.52ms)
+OK     dependencies with escaped characters > invalid object 1 (82.28ms)
+OK     dependencies with escaped characters > invalid object 2 (82.05ms)
+OK     dependencies with escaped characters > invalid object 3 (81.81ms)
+OK     dependencies with escaped characters > invalid object 4 (81.57ms)
+OK     exclusiveMinimum validation > above the exclusiveMinimum is valid (81.28ms)
+OK     exclusiveMinimum validation > boundary point is invalid (81.12ms)
+OK     exclusiveMinimum validation > below the exclusiveMinimum is invalid (81.00ms)
+FAILED exclusiveMinimum validation > ignores non-numbers
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+OK     const validation > same value is valid (80.58ms)
+OK     const validation > another value is invalid (80.50ms)
+OK     const validation > another type is invalid (80.43ms)
+OK     const with object > same object is valid (80.39ms)
+OK     const with object > same object with different property order is valid (80.30ms)
+OK     const with object > another object is invalid (80.21ms)
+OK     const with object > another type is invalid (80.08ms)
+OK     const with array > same array is valid (79.99ms)
+OK     const with array > another array item is invalid (79.77ms)
+OK     const with array > array with additional items is invalid (79.68ms)
+OK     const with null > null is valid (79.60ms)
+OK     const with null > not null is invalid (79.55ms)
+OK     const with false does not match 0 > false is valid (79.49ms)
+OK     const with false does not match 0 > integer zero is invalid (79.36ms)
+OK     const with false does not match 0 > float zero is invalid (79.25ms)
+OK     const with true does not match 1 > true is valid (79.15ms)
+OK     const with true does not match 1 > integer one is invalid (79.04ms)
+OK     const with true does not match 1 > float one is invalid (78.94ms)
+OK     const with 0 does not match false > false is invalid (78.84ms)
+OK     const with 0 does not match false > integer zero is valid (78.68ms)
+OK     const with 0 does not match false > float zero is valid (78.57ms)
+OK     const with 1 does not match true > true is invalid (78.49ms)
+OK     const with 1 does not match true > integer one is valid (78.40ms)
+OK     const with 1 does not match true > float one is valid (78.31ms)
+OK     anyOf > first anyOf valid (78.17ms)
+OK     anyOf > second anyOf valid (78.01ms)
+OK     anyOf > both anyOf valid (77.86ms)
+OK     anyOf > neither anyOf valid (77.72ms)
+OK     anyOf with base schema > mismatch base schema (77.58ms)
+FAILED anyOf with base schema > one anyOf valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+OK     anyOf with base schema > both anyOf invalid (77.17ms)
+FAILED anyOf with boolean schemas, all true > any value is valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+FAILED anyOf with boolean schemas, some true > any value is valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+OK     anyOf with boolean schemas, all false > any value is invalid (76.75ms)
+OK     anyOf complex types > first anyOf valid (complex) (76.68ms)
+OK     anyOf complex types > second anyOf valid (complex) (76.52ms)
+OK     anyOf complex types > both anyOf valid (complex) (76.35ms)
+OK     anyOf complex types > neither anyOf valid (complex) (76.10ms)
+FAILED anyOf with one empty schema > string is valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+OK     anyOf with one empty schema > number is valid (75.49ms)
+OK     nested anyOf, to check validation semantics > null is valid (75.33ms)
+OK     nested anyOf, to check validation semantics > anything non-null is invalid (73.95ms)
+OK     propertyNames validation > all property names valid (73.73ms)
+OK     propertyNames validation > some property names invalid (73.57ms)
+OK     propertyNames validation > object without properties is valid (73.43ms)
+OK     propertyNames validation > ignores arrays (72.82ms)
+FAILED propertyNames validation > ignores strings
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+OK     propertyNames validation > ignores other non-objects (72.42ms)
+OK     propertyNames with boolean schema true > object with any properties is valid (72.29ms)
+OK     propertyNames with boolean schema true > empty object is valid (72.18ms)
+OK     propertyNames with boolean schema false > object with any properties is invalid (72.09ms)
+OK     propertyNames with boolean schema false > empty object is valid (71.99ms)
+OK     boolean schema 'true' > number is valid (71.92ms)
+FAILED boolean schema 'true' > string is valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+OK     boolean schema 'true' > boolean true is valid (71.57ms)
+OK     boolean schema 'true' > boolean false is valid (71.47ms)
+OK     boolean schema 'true' > null is valid (70.90ms)
+OK     boolean schema 'true' > object is valid (70.81ms)
+OK     boolean schema 'true' > empty object is valid (70.73ms)
+OK     boolean schema 'true' > array is valid (70.69ms)
+OK     boolean schema 'true' > empty array is valid (70.65ms)
+OK     boolean schema 'false' > number is invalid (70.62ms)
+OK     boolean schema 'false' > string is invalid (70.58ms)
+OK     boolean schema 'false' > boolean true is invalid (70.54ms)
+OK     boolean schema 'false' > boolean false is invalid (70.51ms)
+OK     boolean schema 'false' > null is invalid (70.47ms)
+OK     boolean schema 'false' > object is invalid (70.44ms)
+OK     boolean schema 'false' > empty object is invalid (70.39ms)
+OK     boolean schema 'false' > array is invalid (70.35ms)
+OK     boolean schema 'false' > empty array is invalid (70.31ms)
+FAILED not > allowed
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+OK     not > disallowed (70.10ms)
+FAILED not multiple types > valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+OK     not multiple types > mismatch (69.87ms)
+OK     not multiple types > other mismatch (69.78ms)
+OK     not more complex schema > match (69.72ms)
+OK     not more complex schema > other match (69.63ms)
+OK     not more complex schema > mismatch (69.53ms)
+OK     forbidden property > property present (69.40ms)
+OK     forbidden property > property absent (69.28ms)
+OK     not with boolean schema true > any value is invalid (68.87ms)
+FAILED not with boolean schema false > any value is valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+OK     a schema given for items > valid items (68.60ms)
+OK     a schema given for items > wrong type of items (68.48ms)
+OK     a schema given for items > ignores non-arrays (68.37ms)
+OK     a schema given for items > JavaScript pseudo-array is valid (67.83ms)
+OK     an array of schemas for items > correct types (67.68ms)
+OK     an array of schemas for items > wrong types (67.54ms)
+OK     an array of schemas for items > incomplete array of items (67.30ms)
+OK     an array of schemas for items > array with additional items (67.20ms)
+OK     an array of schemas for items > empty array (67.11ms)
+OK     an array of schemas for items > JavaScript pseudo-array is valid (67.03ms)
+OK     items with boolean schema (true) > any array is valid (66.93ms)
+OK     items with boolean schema (true) > empty array is valid (66.87ms)
+OK     items with boolean schema (false) > any non-empty array is invalid (66.81ms)
+OK     items with boolean schema (false) > empty array is valid (66.74ms)
+OK     items with boolean schemas > array with one item is valid (66.68ms)
+OK     items with boolean schemas > array with two items is invalid (66.62ms)
+OK     items with boolean schemas > empty array is valid (66.55ms)
+OK     items and subitems > valid items (66.49ms)
+OK     items and subitems > too many items (66.03ms)
+OK     items and subitems > too many sub-items (65.80ms)
+OK     items and subitems > wrong item (65.73ms)
+OK     items and subitems > wrong sub-item (65.47ms)
+OK     items and subitems > fewer items is valid (65.16ms)
+OK     nested items > valid nested array (64.86ms)
+OK     nested items > nested array with invalid type (64.70ms)
+OK     nested items > not deep enough (64.56ms)
+OK     simple enum validation > one of the enum is valid (64.41ms)
+OK     simple enum validation > something else is invalid (64.34ms)
+OK     heterogeneous enum validation > one of the enum is valid (64.29ms)
+OK     heterogeneous enum validation > something else is invalid (64.24ms)
+OK     heterogeneous enum validation > objects are deep compared (64.17ms)
+OK     enums in properties > both properties are valid (64.07ms)
+OK     enums in properties > missing optional property is valid (63.94ms)
+OK     enums in properties > missing required property is invalid (63.83ms)
+OK     enums in properties > missing all properties is invalid (63.71ms)
+FAILED enum with escaped characters > member 1 is valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+FAILED enum with escaped characters > member 2 is valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+OK     enum with escaped characters > another string is invalid (63.22ms)
+OK     enum with false does not match 0 > false is valid (63.16ms)
+OK     enum with false does not match 0 > integer zero is invalid (63.09ms)
+OK     enum with false does not match 0 > float zero is invalid (63.02ms)
+OK     enum with true does not match 1 > true is valid (62.96ms)
+OK     enum with true does not match 1 > integer one is invalid (62.89ms)
+OK     enum with true does not match 1 > float one is invalid (62.82ms)
+OK     enum with 0 does not match false > false is invalid (62.76ms)
+OK     enum with 0 does not match false > integer zero is valid (62.56ms)
+OK     enum with 0 does not match false > float zero is valid (62.43ms)
+OK     enum with 1 does not match true > true is invalid (62.34ms)
+OK     enum with 1 does not match true > integer one is valid (62.28ms)
+OK     enum with 1 does not match true > float one is valid (62.24ms)
+OK     minProperties validation > longer is valid (62.20ms)
+OK     minProperties validation > exact length is valid (62.15ms)
+OK     minProperties validation > too short is invalid (62.11ms)
+OK     minProperties validation > ignores arrays (62.07ms)
+FAILED minProperties validation > ignores strings
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+OK     minProperties validation > ignores other non-objects (61.88ms)
+OK     object properties validation > both properties present and valid is valid (61.80ms)
+OK     object properties validation > one property invalid is invalid (59.91ms)
+OK     object properties validation > both properties invalid is invalid (59.77ms)
+OK     object properties validation > doesn't invalidate other properties (59.67ms)
+OK     object properties validation > ignores arrays (59.59ms)
+OK     object properties validation > ignores other non-objects (59.52ms)
+OK     properties, patternProperties, additionalProperties interaction > property validates property (57.67ms)
+OK     properties, patternProperties, additionalProperties interaction > property invalidates property (56.66ms)
+OK     properties, patternProperties, additionalProperties interaction > patternProperty invalidates property (55.75ms)
+OK     properties, patternProperties, additionalProperties interaction > patternProperty validates nonproperty (54.88ms)
+OK     properties, patternProperties, additionalProperties interaction > patternProperty invalidates nonproperty (54.29ms)
+OK     properties, patternProperties, additionalProperties interaction > additionalProperty ignores property (53.45ms)
+OK     properties, patternProperties, additionalProperties interaction > additionalProperty validates others (52.67ms)
+OK     properties, patternProperties, additionalProperties interaction > additionalProperty invalidates others (51.71ms)
+OK     properties with boolean schema > no property present is valid (51.17ms)
+OK     properties with boolean schema > only 'true' property present is valid (51.07ms)
+OK     properties with boolean schema > only 'false' property present is invalid (51.01ms)
+OK     properties with boolean schema > both properties present is invalid (50.93ms)
+OK     properties with escaped characters > object with all numbers is valid (50.87ms)
+OK     properties with escaped characters > object with strings is invalid (50.68ms)
+FAILED maxLength validation > shorter is valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+FAILED maxLength validation > exact length is valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+OK     maxLength validation > too long is invalid (50.19ms)
+OK     maxLength validation > ignores non-strings (50.16ms)
+FAILED maxLength validation > two supplementary Unicode code points is long enough
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+OK     exclusiveMaximum validation > below the exclusiveMaximum is valid (49.90ms)
+OK     exclusiveMaximum validation > boundary point is invalid (49.82ms)
+OK     exclusiveMaximum validation > above the exclusiveMaximum is invalid (49.76ms)
+FAILED exclusiveMaximum validation > ignores non-numbers
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+OK     minimum validation > above the minimum is valid (49.57ms)
+OK     minimum validation > boundary point is valid (50.02ms)
+OK     minimum validation > below the minimum is invalid (49.97ms)
+FAILED minimum validation > ignores non-numbers
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+OK     minimum validation with signed integer > negative above the minimum is valid (49.80ms)
+OK     minimum validation with signed integer > positive above the minimum is valid (49.74ms)
+OK     minimum validation with signed integer > boundary point is valid (49.69ms)
+OK     minimum validation with signed integer > below the minimum is invalid (49.64ms)
+FAILED minimum validation with signed integer > ignores non-numbers
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+OK     oneOf > first oneOf valid (49.47ms)
+OK     oneOf > second oneOf valid (49.37ms)
+OK     oneOf > both oneOf valid (49.27ms)
+OK     oneOf > neither oneOf valid (49.18ms)
+OK     oneOf with base schema > mismatch base schema (49.09ms)
+FAILED oneOf with base schema > one oneOf valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+OK     oneOf with base schema > both oneOf valid (48.81ms)
+OK     oneOf with boolean schemas, all true > any value is invalid (48.72ms)
+FAILED oneOf with boolean schemas, one true > any value is valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+OK     oneOf with boolean schemas, more than one true > any value is invalid (48.54ms)
+OK     oneOf with boolean schemas, all false > any value is invalid (48.50ms)
+OK     oneOf complex types > first oneOf valid (complex) (48.46ms)
+OK     oneOf complex types > second oneOf valid (complex) (47.99ms)
+OK     oneOf complex types > both oneOf valid (complex) (47.82ms)
+OK     oneOf complex types > neither oneOf valid (complex) (47.62ms)
+FAILED oneOf with empty schema > one valid - valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+OK     oneOf with empty schema > both valid - invalid (47.34ms)
+OK     oneOf with required > both invalid - invalid (47.29ms)
+OK     oneOf with required > first valid - valid (47.22ms)
+OK     oneOf with required > second valid - valid (47.14ms)
+OK     oneOf with required > both valid - invalid (47.07ms)
+OK     ignore if without then or else > valid when valid against lone if (47.00ms)
+FAILED ignore if without then or else > valid when invalid against lone if
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+OK     ignore then without if > valid when valid against lone then (46.87ms)
+FAILED ignore then without if > valid when invalid against lone then
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+OK     ignore else without if > valid when valid against lone else (46.75ms)
+FAILED ignore else without if > valid when invalid against lone else
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+OK     if and then without else > valid through then (46.56ms)
+OK     if and then without else > invalid through then (46.09ms)
+OK     if and then without else > valid when if test fails (45.95ms)
+OK     if and else without then > valid when if test passes (45.84ms)
+OK     if and else without then > valid through else (45.75ms)
+OK     if and else without then > invalid through else (45.25ms)
+OK     validate against correct branch, then vs else > valid through then (44.94ms)
+OK     validate against correct branch, then vs else > invalid through then (43.69ms)
+OK     validate against correct branch, then vs else > valid through else (43.61ms)
+OK     validate against correct branch, then vs else > invalid through else (43.55ms)
+OK     non-interference across combined schemas > valid, but would have been invalid through then (43.50ms)
+OK     non-interference across combined schemas > valid, but would have been invalid through else (43.42ms)
+OK     additionalItems as schema > additional items match schema (43.29ms)
+OK     additionalItems as schema > additional items do not match schema (43.20ms)
+OK     items is schema, no additionalItems > all items match schema (42.68ms)
+OK     array of items with no additionalItems > fewer number of items present (42.59ms)
+OK     array of items with no additionalItems > equal number of items present (42.51ms)
+OK     array of items with no additionalItems > additional items are not permitted (42.43ms)
+OK     additionalItems as false without items > items defaults to empty schema so everything is valid (42.36ms)
+OK     additionalItems as false without items > ignores non-arrays (42.29ms)
+OK     additionalItems are allowed by default > only the first item is validated (42.23ms)
+FAILED pattern validation > a matching pattern is valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+OK     pattern validation > a non-matching pattern is invalid (41.99ms)
+OK     pattern validation > ignores non-strings (41.95ms)
+FAILED pattern is not anchored > matches a substring
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+OK     valid definition > valid definition schema (41.76ms)
+OK     invalid definition > invalid definition schema (41.06ms)
+OK     maxProperties validation > shorter is valid (40.75ms)
+OK     maxProperties validation > exact length is valid (40.67ms)
+OK     maxProperties validation > too long is invalid (40.61ms)
+OK     maxProperties validation > ignores arrays (40.54ms)
+FAILED maxProperties validation > ignores strings
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+OK     maxProperties validation > ignores other non-objects (40.32ms)
+OK     required validation > present required property is valid (40.25ms)
+OK     required validation > non-present required property is invalid (40.16ms)
+OK     required validation > ignores arrays (40.07ms)
+FAILED required validation > ignores strings
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+OK     required validation > ignores other non-objects (39.27ms)
+OK     required default validation > not required by default (39.17ms)
+OK     required with empty array > property not required (39.09ms)
+OK     required with escaped characters > object with all properties present is valid (39.01ms)
+OK     required with escaped characters > object with some properties missing is invalid (38.87ms)
+OK     integer type matches integers > an integer is an integer (38.74ms)
+OK     integer type matches integers > a float is not an integer (38.68ms)
+OK     integer type matches integers > a string is not an integer (38.60ms)
+FAILED integer type matches integers > a string is still not an integer, even if it looks like one
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   true
++   false
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+OK     integer type matches integers > an object is not an integer (38.40ms)
+OK     integer type matches integers > an array is not an integer (38.33ms)
+OK     integer type matches integers > a boolean is not an integer (38.27ms)
+OK     integer type matches integers > null is not an integer (38.21ms)
+OK     number type matches numbers > an integer is a number (38.15ms)
+OK     number type matches numbers > a float is a number (38.10ms)
+OK     number type matches numbers > a string is not a number (38.05ms)
+FAILED number type matches numbers > a string is still not a number, even if it looks like one
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   true
++   false
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+OK     number type matches numbers > an object is not a number (37.88ms)
+OK     number type matches numbers > an array is not a number (37.82ms)
+OK     number type matches numbers > a boolean is not a number (37.76ms)
+OK     number type matches numbers > null is not a number (37.70ms)
+OK     string type matches strings > 1 is not a string (37.65ms)
+OK     string type matches strings > a float is not a string (37.59ms)
+FAILED string type matches strings > a string is a string
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+FAILED string type matches strings > a string is still a string, even if it looks like a number
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+FAILED string type matches strings > an empty string is still a string
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+OK     string type matches strings > an object is not a string (37.19ms)
+OK     string type matches strings > an array is not a string (37.13ms)
+OK     string type matches strings > a boolean is not a string (37.07ms)
+OK     string type matches strings > null is not a string (36.04ms)
+OK     object type matches objects > an integer is not an object (35.97ms)
+OK     object type matches objects > a float is not an object (35.91ms)
+OK     object type matches objects > a string is not an object (35.84ms)
+OK     object type matches objects > an object is an object (35.80ms)
+OK     object type matches objects > an array is not an object (35.75ms)
+OK     object type matches objects > a boolean is not an object (35.70ms)
+OK     object type matches objects > null is not an object (35.64ms)
+OK     array type matches arrays > an integer is not an array (35.59ms)
+OK     array type matches arrays > a float is not an array (35.53ms)
+OK     array type matches arrays > a string is not an array (35.48ms)
+OK     array type matches arrays > an object is not an array (35.44ms)
+OK     array type matches arrays > an array is an array (35.32ms)
+OK     array type matches arrays > a boolean is not an array (35.19ms)
+OK     array type matches arrays > null is not an array (35.09ms)
+OK     boolean type matches booleans > an integer is not a boolean (35.00ms)
+OK     boolean type matches booleans > zero is not a boolean (34.92ms)
+OK     boolean type matches booleans > a float is not a boolean (34.85ms)
+OK     boolean type matches booleans > a string is not a boolean (34.75ms)
+OK     boolean type matches booleans > an empty string is not a boolean (34.69ms)
+OK     boolean type matches booleans > an object is not a boolean (34.63ms)
+OK     boolean type matches booleans > an array is not a boolean (34.56ms)
+OK     boolean type matches booleans > true is a boolean (34.51ms)
+OK     boolean type matches booleans > false is a boolean (34.46ms)
+OK     boolean type matches booleans > null is not a boolean (34.41ms)
+OK     null type matches only the null object > an integer is not null (34.35ms)
+OK     null type matches only the null object > a float is not null (34.30ms)
+OK     null type matches only the null object > zero is not null (34.24ms)
+OK     null type matches only the null object > a string is not null (34.19ms)
+OK     null type matches only the null object > an empty string is not null (34.16ms)
+OK     null type matches only the null object > an object is not null (34.12ms)
+OK     null type matches only the null object > an array is not null (34.07ms)
+OK     null type matches only the null object > true is not null (34.02ms)
+OK     null type matches only the null object > false is not null (33.98ms)
+OK     null type matches only the null object > null is null (33.93ms)
+OK     multiple types can be specified in an array > an integer is valid (33.89ms)
+FAILED multiple types can be specified in an array > a string is valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+OK     multiple types can be specified in an array > a float is invalid (33.68ms)
+OK     multiple types can be specified in an array > an object is invalid (33.61ms)
+OK     multiple types can be specified in an array > an array is invalid (33.55ms)
+OK     multiple types can be specified in an array > a boolean is invalid (33.44ms)
+OK     multiple types can be specified in an array > null is invalid (33.39ms)
+FAILED type as array with one item > string is valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+OK     type as array with one item > number is invalid (33.18ms)
+OK     type: array or object > array is valid (33.12ms)
+OK     type: array or object > object is valid (33.07ms)
+OK     type: array or object > number is invalid (33.02ms)
+OK     type: array or object > string is invalid (32.97ms)
+OK     type: array or object > null is invalid (32.94ms)
+OK     type: array, object or null > array is valid (32.89ms)
+OK     type: array, object or null > object is valid (32.84ms)
+OK     type: array, object or null > null is valid (32.79ms)
+OK     type: array, object or null > number is invalid (32.74ms)
+OK     type: array, object or null > string is invalid (32.69ms)
+OK     invalid type for default > valid when property is specified (32.65ms)
+OK     invalid type for default > still valid when the invalid default is used (32.58ms)
+OK     invalid string value for default > valid when property is specified (32.51ms)
+OK     invalid string value for default > still valid when the invalid default is used (32.42ms)
+OK     by int > int by int (32.34ms)
+OK     by int > int by int fail (32.28ms)
+FAILED by int > ignores non-numbers
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+OK     by number > zero is multiple of anything (32.11ms)
+OK     by number > 4.5 is multiple of 1.5 (32.05ms)
+OK     by number > 35 is not multiple of 1.5 (32.00ms)
+OK     by small number > 0.0075 is multiple of 0.0001 (31.93ms)
+OK     by small number > 0.00751 is not multiple of 0.0001 (31.88ms)
+OK     patternProperties validates properties matching a regex > a single valid match is valid (31.76ms)
+OK     patternProperties validates properties matching a regex > multiple valid matches is valid (31.37ms)
+OK     patternProperties validates properties matching a regex > a single invalid match is invalid (31.06ms)
+OK     patternProperties validates properties matching a regex > multiple invalid matches is invalid (30.68ms)
+OK     patternProperties validates properties matching a regex > ignores arrays (30.35ms)
+FAILED patternProperties validates properties matching a regex > ignores strings
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+OK     patternProperties validates properties matching a regex > ignores other non-objects (30.13ms)
+OK     multiple simultaneous patternProperties are validated > a single valid match is valid (30.05ms)
+OK     multiple simultaneous patternProperties are validated > a simultaneous match is valid (29.50ms)
+OK     multiple simultaneous patternProperties are validated > multiple matches is valid (28.93ms)
+OK     multiple simultaneous patternProperties are validated > an invalid due to one is invalid (28.36ms)
+OK     multiple simultaneous patternProperties are validated > an invalid due to the other is invalid (28.12ms)
+OK     multiple simultaneous patternProperties are validated > an invalid due to both is invalid (27.65ms)
+OK     regexes are not anchored by default and are case sensitive > non recognized members are ignored (27.49ms)
+OK     regexes are not anchored by default and are case sensitive > recognized members are accounted for (25.72ms)
+OK     regexes are not anchored by default and are case sensitive > regexes are case sensitive (23.71ms)
+OK     regexes are not anchored by default and are case sensitive > regexes are case sensitive, 2 (21.83ms)
+OK     patternProperties with boolean schemas > object with property matching schema true is valid (21.55ms)
+OK     patternProperties with boolean schemas > object with property matching schema false is invalid (21.13ms)
+OK     patternProperties with boolean schemas > object with both properties is invalid (20.89ms)
+OK     patternProperties with boolean schemas > empty object is valid (20.60ms)
+FAILED remote ref > remote ref valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+OK     remote ref > remote ref invalid (20.02ms)
+FAILED fragment within remote ref > remote fragment valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+OK     fragment within remote ref > remote fragment invalid (19.76ms)
+FAILED ref within remote ref > ref within ref valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+OK     ref within remote ref > ref within ref invalid (19.56ms)
+FAILED base URI change > base URI change ref valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+OK     base URI change > base URI change ref invalid (19.31ms)
+FAILED base URI change - change folder > number is valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+OK     base URI change - change folder > string is invalid (18.69ms)
+FAILED base URI change - change folder in subschema > number is valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+OK     base URI change - change folder in subschema > string is invalid (18.23ms)
+FAILED root ref in remote ref > string is valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+FAILED root ref in remote ref > null is valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+OK     root ref in remote ref > object is invalid (17.73ms)
+OK     allOf > allOf (17.63ms)
+OK     allOf > mismatch second (17.56ms)
+OK     allOf > mismatch first (17.50ms)
+OK     allOf > wrong type (17.44ms)
+OK     allOf with base schema > valid (17.37ms)
+OK     allOf with base schema > mismatch base schema (17.29ms)
+OK     allOf with base schema > mismatch first allOf (17.22ms)
+OK     allOf with base schema > mismatch second allOf (17.15ms)
+OK     allOf with base schema > mismatch both (17.09ms)
+OK     allOf simple types > valid (17.03ms)
+OK     allOf simple types > mismatch one (16.99ms)
+FAILED allOf with boolean schemas, all true > any value is valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+OK     allOf with boolean schemas, some false > any value is invalid (16.85ms)
+OK     allOf with boolean schemas, all false > any value is invalid (16.83ms)
+OK     allOf with one empty schema > any data is valid (16.82ms)
+OK     allOf with two empty schemas > any data is valid (16.79ms)
+OK     allOf with the first empty schema > number is valid (16.78ms)
+OK     allOf with the first empty schema > string is invalid (16.75ms)
+OK     allOf with the last empty schema > number is valid (16.74ms)
+OK     allOf with the last empty schema > string is invalid (16.69ms)
+OK     root pointer ref > match (16.66ms)
+OK     root pointer ref > recursive match (16.59ms)
+OK     root pointer ref > mismatch (16.53ms)
+OK     root pointer ref > recursive mismatch (16.49ms)
+OK     relative pointer ref to object > match (16.44ms)
+OK     relative pointer ref to object > mismatch (16.38ms)
+OK     relative pointer ref to array > match array (16.33ms)
+OK     relative pointer ref to array > mismatch array (16.22ms)
+OK     escaped pointer ref > slash invalid (16.15ms)
+OK     escaped pointer ref > tilda invalid (16.06ms)
+OK     escaped pointer ref > percent invalid (15.97ms)
+OK     escaped pointer ref > slash valid (15.89ms)
+OK     escaped pointer ref > tilda valid (15.81ms)
+OK     escaped pointer ref > percent valid (15.72ms)
+OK     nested refs > nested ref valid (15.62ms)
+OK     nested refs > nested ref invalid (15.52ms)
+OK     ref overrides any sibling keywords > ref valid (15.49ms)
+OK     ref overrides any sibling keywords > ref valid, maxItems ignored (13.65ms)
+OK     ref overrides any sibling keywords > ref invalid (13.56ms)
+OK     remote ref, containing refs itself > remote ref valid (13.48ms)
+OK     remote ref, containing refs itself > remote ref invalid (13.32ms)
+OK     property named $ref that is not a reference > property named $ref valid (13.18ms)
+OK     property named $ref that is not a reference > property named $ref invalid (13.15ms)
+FAILED $ref to boolean schema true > any value is valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+OK     $ref to boolean schema false > any value is invalid (13.04ms)
+OK     Recursive references between schemas > valid tree (13.03ms)
+OK     Recursive references between schemas > invalid tree (12.51ms)
+OK     refs with quote > object with numbers is valid (12.35ms)
+OK     refs with quote > object with strings is invalid (12.30ms)
+FAILED Location-independent identifier > match
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+OK     Location-independent identifier > mismatch (12.17ms)
+FAILED Location-independent identifier with absolute URI > match
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+OK     Location-independent identifier with absolute URI > mismatch (12.07ms)
+FAILED Location-independent identifier with base URI change in subschema > match
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+OK     Location-independent identifier with base URI change in subschema > mismatch (11.84ms)
+OK     maximum validation > below the maximum is valid (11.80ms)
+OK     maximum validation > boundary point is valid (11.77ms)
+OK     maximum validation > above the maximum is invalid (11.75ms)
+FAILED maximum validation > ignores non-numbers
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+FAILED minLength validation > longer is valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+FAILED minLength validation > exact length is valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+OK     minLength validation > too short is invalid (11.49ms)
+OK     minLength validation > ignores non-strings (11.47ms)
+OK     minLength validation > one supplementary Unicode code point is not long enough (11.45ms)
+OK     maxItems validation > shorter is valid (11.44ms)
+OK     maxItems validation > exact length is valid (11.43ms)
+OK     maxItems validation > too long is invalid (11.42ms)
+FAILED maxItems validation > ignores non-arrays
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+OK     contains keyword validation > array with item matching schema (5) is valid (11.28ms)
+OK     contains keyword validation > array with item matching schema (6) is valid (11.24ms)
+OK     contains keyword validation > array with two items matching schema (5, 6) is valid (11.21ms)
+OK     contains keyword validation > array without items matching schema is invalid (11.18ms)
+OK     contains keyword validation > empty array is invalid (11.16ms)
+OK     contains keyword validation > not array is valid (11.14ms)
+OK     contains keyword with const keyword > array with item 5 is valid (11.12ms)
+OK     contains keyword with const keyword > array with two items 5 is valid (11.09ms)
+OK     contains keyword with const keyword > array without item 5 is invalid (11.06ms)
+OK     contains keyword with boolean schema true > any non-empty array is valid (11.03ms)
+OK     contains keyword with boolean schema true > empty array is invalid (11.01ms)
+OK     contains keyword with boolean schema false > any non-empty array is invalid (11.00ms)
+OK     contains keyword with boolean schema false > empty array is invalid (10.74ms)
+FAILED contains keyword with boolean schema false > non-arrays are valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+OK     hello fraud (10.62ms)
+OK     null as schema is an error (10.43ms)
+OK     correctly handles null as instance (10.37ms)
+OK     correctly handles null as instance property (10.33ms)
+OK     validating json buffers (10.18ms)
+OK     encoding strings is slow (10.01ms)
+OK     validating the input schema slows things down too (9.86ms)
+OK     detects schema syntax errors if validateSchema is true (9.67ms)
+OK     does not detect schema syntax errors if validateSchema is false (9.49ms)
+OK     validateSchema defaults to true (9.43ms)
+OK     gracefully handles invalid json (9.30ms)
+OK     accepts pojos (9.27ms)
+OK     works with things like arrays (9.08ms)
+
+test result:  FAIL  479 passed; 57 failed; 2 ignored; 0 measured; 0 filtered out (101.59ms)
+
+There were 57 test failures.
+ FAIL  dependencies > ignores strings
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  exclusiveMinimum validation > ignores non-numbers
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  anyOf with base schema > one anyOf valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  anyOf with boolean schemas, all true > any value is valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  anyOf with boolean schemas, some true > any value is valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  anyOf with one empty schema > string is valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  propertyNames validation > ignores strings
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  boolean schema 'true' > string is valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  not > allowed
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  not multiple types > valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  not with boolean schema false > any value is valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  enum with escaped characters > member 1 is valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  enum with escaped characters > member 2 is valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  minProperties validation > ignores strings
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  maxLength validation > shorter is valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  maxLength validation > exact length is valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  maxLength validation > two supplementary Unicode code points is long enough
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  exclusiveMaximum validation > ignores non-numbers
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  minimum validation > ignores non-numbers
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  minimum validation with signed integer > ignores non-numbers
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  oneOf with base schema > one oneOf valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  oneOf with boolean schemas, one true > any value is valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  oneOf with empty schema > one valid - valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  ignore if without then or else > valid when invalid against lone if
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  ignore then without if > valid when invalid against lone then
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  ignore else without if > valid when invalid against lone else
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  pattern validation > a matching pattern is valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  pattern is not anchored > matches a substring
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  maxProperties validation > ignores strings
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  required validation > ignores strings
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  integer type matches integers > a string is still not an integer, even if it looks like one
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   true
++   false
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  number type matches numbers > a string is still not a number, even if it looks like one
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   true
++   false
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  string type matches strings > a string is a string
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  string type matches strings > a string is still a string, even if it looks like a number
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  string type matches strings > an empty string is still a string
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  multiple types can be specified in an array > a string is valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  type as array with one item > string is valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  by int > ignores non-numbers
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  patternProperties validates properties matching a regex > ignores strings
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  remote ref > remote ref valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  fragment within remote ref > remote fragment valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  ref within remote ref > ref within ref valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  base URI change > base URI change ref valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  base URI change - change folder > number is valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  base URI change - change folder in subschema > number is valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  root ref in remote ref > string is valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  root ref in remote ref > null is valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  allOf with boolean schemas, all true > any value is valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  $ref to boolean schema true > any value is valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  Location-independent identifier > match
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  Location-independent identifier with absolute URI > match
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  Location-independent identifier with base URI change in subschema > match
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  maximum validation > ignores non-numbers
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  minLength validation > longer is valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  minLength validation > exact length is valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  maxItems validation > ignores non-arrays
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
+ FAIL  contains keyword with boolean schema false > non-arrays are valid
+AssertionError: 
+
+    [Diff] Left / Right
+
+
+-   false
++   true
+
+    at assertEquals (asserts.ts:152:9)
+    at fn (test.ts:27:9)
+    at createTestCase (mod.ts:260:11)
+    at Array.map (<anonymous>)
+    at initTestCases (mod.ts:283:16)
+    at runTestsParallel (mod.ts:293:23)
+    at runTests (mod.ts:398:11)
+    at runIfMain (mod.ts:427:12)
+    at test.ts:169:1
