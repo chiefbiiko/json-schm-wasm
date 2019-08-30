@@ -1,4 +1,4 @@
-use jsonschema_valid::{is_valid as si_valid, schemas::Draft7};
+use wasm_valid::{is_valid as si_valid, schemas::Draft7};
 use serde_json::{from_slice, Value};
 use wasm_bindgen::prelude::*;
 
