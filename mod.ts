@@ -28,10 +28,10 @@ export function isValid(
   const instancePtr: number = wasm.__wbindgen_malloc(instance.byteLength);
   const schemaPtr: number = wasm.__wbindgen_malloc(schema.byteLength);
 
-  const vue: Uint8Array = new Uint8Array(wasm.memory.buffer);
+  const mem: Uint8Array = new Uint8Array(wasm.memory.buffer);
 
-  vue.set(instance, instancePtr);
-  vue.set(schema, schemaPtr);
+  mem.set(instance, instancePtr);
+  mem.set(schema, schemaPtr);
 
   return !!wasm.is_valid(
     instancePtr,

@@ -8,11 +8,11 @@ cd ./test
 
 echo "[check.sh] 🔬 running test suite"
 
-fails=$(deno run --allow-read ./test.ts 2>&1 | grep "failures" | tr -d -c 0-9)
+FAILS=$(deno run --allow-read ./test.ts 2>&1 | grep "failures" | tr -d -c 0-9)
 
-echo "[check.sh] 🏁 # of fails: $fails"
+echo "[check.sh] 🏁 # of fails: $FAILS"
 
-if [[ $fails -eq 0 ]]; then
+if [[ $FAILS -eq 0 ]]; then
   exit 0;
 else  
   exit 1;
