@@ -4,4 +4,4 @@ install:
   - ps: iex (iwr https://deno.land/x/install/install.ps1)
 
 test_script:
-  - cmd: deno run ./test.ts
+  - cmd: exit 1
