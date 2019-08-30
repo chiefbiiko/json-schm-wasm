@@ -24,4 +24,4 @@ export function loadWasm(): { [key: string]: any } {
 
 echo "$LOADER" > ./loadWasm.ts
 
-echo "[build.sh] 🎉 successfull build"
+echo "[build.sh] 🎉 successful build"
